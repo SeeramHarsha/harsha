@@ -5,10 +5,10 @@ import os
 app = Flask(__name__)
 
 # Connection string (use environment variable for security in production)
-MONGO_URI = os.getenv("mongodb+srv://Harsha1234:Harsha1234@cluster1.mongodb.net/college_db?retryWrites=true&w=majority")
+MONGO_URI = os.getenv(""mongodb+srv://Harsha1234:Harsha1234@cluster0.mongodb.net/college_db?retryWrites=true&w=majority"")
 
 try:
-    client = MongoClient("mongodb+srv://Harsha1234:Harsha1234@cluster1.mongodb.net/college_db?retryWrites=true&w=majority")
+    client = MongoClient(MONGO_URI)
     db = client["college_db"]
     college_collection = db["college_details"]
 except Exception as e:
