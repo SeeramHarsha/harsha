@@ -19,7 +19,7 @@ except Exception as e:
 def home():
     return "Welcome to the Flask App!"
 
-@app.route("/colleges", methods=["GET"])
+@app.route("/schools", methods=["GET"])
 def get_colleges():
     if client is None:
         return jsonify({"error": "Database connection failed"}), 500
