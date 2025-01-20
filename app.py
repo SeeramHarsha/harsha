@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 # Connect to MongoDB
 # Replace '<username>', '<password>', and '<cluster-url>' with your MongoDB connection details
+print("hello")
 client = MongoClient("mongodb://localhost:27017/college_db")
 db = client["college_db"]
 college_collection = db["college_details"]
