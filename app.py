@@ -25,7 +25,7 @@ def get_colleges():
         return jsonify({"error": "Database connection failed"}), 500
     try:
         colleges = list(college_collection.find({}, {"_id": 0}))
-        return jsonify({"colleges": colleges})
+        return jsonify({"schools": colleges})
     except Exception as e:
         return jsonify({"error": f"Failed to fetch data: {str(e)}"}), 500
 
