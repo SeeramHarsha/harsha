@@ -15,7 +15,19 @@ def home():
 @app.route("/colleges", methods=["GET"])
 def get_colleges():
     # Retrieve all college details from the database
-    colleges = list(college_collection.find({}, {"_id": 0}))
+    colleges = [
+  {
+    "name": "ABC Engineering College",
+    "location": "Hyderabad",
+    "courses": ["CSE", "ECE", "Mechanical"]
+  },
+  {
+    "name": "XYZ College of Arts",
+    "location": "Chennai",
+    "courses": ["History", "Economics", "English"]
+  }
+]
+
     return jsonify({"colleges": colleges})
 
 if __name__ == "__main__":
