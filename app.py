@@ -1,16 +1,16 @@
 from flask import Flask, jsonify
 from pymongo import MongoClient
-import os
 
 app = Flask(__name__)
 
-# Connection string (use environment variable for security in production)
-MONGO_URI = os.getenv("mongodb+srv://Harsha1234:Harsha1234@cluster0.mongodb.net/college_db?retryWrites=true&w=majority")
+# Replace with your MongoDB Atlas URI
+MONGO_URI = "mongodb+srv://Harsha1234:Harsha1234@cluster1.mongodb.net/college_db?retryWrites=true&w=majority"
 
 try:
     client = MongoClient(MONGO_URI)
     db = client["college_db"]
     college_collection = db["college_details"]
+    print("Successfully connected to MongoDB!")
 except Exception as e:
     print(f"Error connecting to MongoDB: {e}")
     client = None
