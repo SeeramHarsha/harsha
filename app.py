@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # Connection string (use environment variable for security in production)
-MONGO_URI = os.getenv(""mongodb+srv://Harsha1234:Harsha1234@cluster0.mongodb.net/college_db?retryWrites=true&w=majority"")
+MONGO_URI = os.getenv("mongodb+srv://Harsha1234:Harsha1234@cluster0.mongodb.net/college_db?retryWrites=true&w=majority")
 
 try:
     client = MongoClient(MONGO_URI)
