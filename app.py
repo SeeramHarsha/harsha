@@ -15,5 +15,6 @@ def get_colleges():
     colleges = list(college_collection.find({}, {"_id": 0}))  # Exclude MongoDB's '_id' field
     return jsonify({"colleges": colleges})
 
+import os
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
